@@ -145,55 +145,38 @@ a{
 	margin:20px 0 10px 0;
 	padding: 0px; 
 	width:100%; 
+	height:100px;
 	display:block; 
 	overflow:hidden;
 	z-index:0;
 }
 .libar{
 	width:100%;
+	list-style: none; 
 }
 .slides { 
 	margin: 0px auto; 
-	width:100%; 
+	width:960px; 
+	height:100px;
 	overflow: hidden; 
 	position: relative; 
 }
-#slide{width:100%;}
 .slide-pic {
-	margin: 0px; 
-	padding: 0px; 
-	width:100%; 
-	overflow: hidden; 
+	width:960px;
+	height:100px;
+	top:0;
+	display: flex;
+	flex-wrap: nowrap;
+	position: absolute;
+}
+.pic1{
+	width:960px;
+	height:100px;
+}
+.cur{
 	list-style: none; 
 }
-#leftarrow{
-	position:absolute; 
-	top:45%; 
-	left:3px;
-	}
-#rightarrow{
-	position:absolute;
-	top:45%; 
-	right:3px;
-}
-.slide-pic img {
-	/*height:100%;*/ 
-	width:100%; 
-	margin:0 auto;
-	border:3px solid #A3A2A1;
-}
-.pic{
-	width:100%;
-}
-.slide-pic li { 
-	display: none; 
-}
-.slide-pic li.cur { 
-	display: block; 
-}
-.slide-txt span { 
-	display: none; 
-}
+
 .ban-bot{
 	width:100%; 
 	height:32px; 
