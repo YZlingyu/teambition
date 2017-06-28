@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<!----------nav--------------------->		
-		<nav>
+		<nav style="z-index:100;">
 			<ul>
 				<img src="../img/logo.png" class="logo">
 				<li class="li1" id="nav1">
@@ -16,21 +16,21 @@
 				</li>
 				<li class="li1" id="nav2">
 					<a href="#product" id="product">PRODUCT<b class="caret"></b></a>
-					<ul class="subnav" id="sub1">
+					<ul class="subnav" id="sub1" style="z-index:100;">
 						<li class="subli"><a href="#product">APPLE</a></li>
 						<li class="subli"><a href="#product">HUAWEI</a></li>
 					</ul>
 				</li>
 				<li class="li1" id="nav3">
 					<a href="#support" id="support">SUPPORT<b class="caret"></b></a>
-					<ul class="subnav" id="sub2">
+					<ul class="subnav" id="sub2" style="z-index:100;">
 						<li class="subli"><a href="#product">APPLE</a></li>
 						<li class="subli"><a href="#product">HUAWEI</a></li>
 					</ul>
 				</li>
 				<li class="li1" id="nav4">
 					<a href="#about" id="about">ABOUT<b class="caret"></b></a>
-					<ul class="subnav" id="sub3">
+					<ul class="subnav" id="sub3" style="z-index:100;">
 						<li class="subli"><a href="#product">APPLE</a></li>
 						<li class="subli"><a href="#product">HUAWEI</a></li>
 					</ul>
@@ -40,9 +40,9 @@
 		</nav>
 		
 		<!----------------long pic----------------->
-		<div class="long box">
-			<div class="left"></div>
-			<div class="right"><img src="../img/right.png"></div>
+		<div class="long box" style="z-index: -100;">
+			<div class="left" style="z-index:-1;"></div>
+			<div class="right" style="z-index:-1;"><img src="../img/right.png"></div>
 			<p class="hello" id="hello">HELLO</p>
 			<p class="hello">WORLD</p>
 			<p class="product">PRODUCT</p>
