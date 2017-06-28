@@ -1,0 +1,21 @@
+$(function(){
+	$("#product").mouseover(function(){
+		document.getElementById("sub1").style.visibility="visible";
+	});
+	$("#product").mouseout(function(){
+		document.getElementById("sub1").style.visibility="hidden";
+	})
+	$("#support").mouseover(function(){
+		document.getElementById("sub2").style.visibility="visible";
+	});
+	$("#support").mouseout(function(){
+		document.getElementById("sub2").style.visibility="hidden";
+	})
+	$("#about").mouseover(function(){
+		document.getElementById("sub3").style.visibility="visible";
+	});
+	$("#about").mouseout(function(){
+		document.getElementById("sub3").style.visibility="hidden";
+	})
+	
+})
