@@ -11,7 +11,6 @@
 nav{
 	background-color: #000000;
 	padding-right: 20px;
-	z-index:100;
 }
 .logo{
 	width: 30px;
@@ -45,7 +44,6 @@ a:link,a:visited{
 	width:120px;
 	text-align:center;
 	text-decoration:none;
-	z-index: 100;
 }
 a:hover,a:active{
 	background-color:#333333;
@@ -54,8 +52,8 @@ a:hover,a:active{
 	background-color: #333333;
 	color: #ffffff;
 	width:120px;
-	z-index: 100;
 	visibility: hidden;
+	position: relative;
 }
 #nav2:hover #sub1{
 	visibility: visible;
@@ -67,7 +65,6 @@ a:hover,a:active{
 	visibility: visible;
 } 
 .subli{
-	z-index:100;
 }
 .subnav > li{
 	background-color: #333333;
@@ -76,7 +73,6 @@ a:hover,a:active{
 	height:30px;
 	line-height: 30px;
 	text-align: center;
-	z-index: 100;
 }
 a{
 	text-decoration: none;
@@ -97,20 +93,19 @@ a{
 .long{
 	width: 100%;
 	background-color: #2D7079;
+	position: relative;
 }
 .left{
 	width: 50%;
 	height:159px;
 	background-image: url(../img/left.png);
 	position:relative;
-	z-index: -1;
 }
 .right{
 	width:50%;
 	background-image: url(../img/right.png);
 	background-repeat: no-repeat;
 	height:209px;
-	z-index: -1;
 }
 .hello{
 	position: absolute;
