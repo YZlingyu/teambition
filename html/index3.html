@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>index</title>
+		<link rel="shortcut icon" href="path/to/favicon.ico">
+		<link rel='stylesheet' href='../css/index3.css' />
+	</head>
+	<body>
+		<!----------nav--------------------->		
+		<nav style="z-index:100;">
+			<ul>
+				<img src="../img/logo.png" class="logo">
+				<li class="li1" id="nav1">
+					<a href="#home">HOME</a>
+				</li>
+				<li class="li1" id="nav2">
+					<a href="#product" id="product">PRODUCT<b class="caret"></b></a>
+					<ul class="subnav" id="sub1" style="z-index:100;">
+						<li class="subli"><a href="#product">APPLE</a></li>
+						<li class="subli"><a href="#product">HUAWEI</a></li>
+					</ul>
+				</li>
+				<li class="li1" id="nav3">
+					<a href="#support" id="support">SUPPORT<b class="caret"></b></a>
+					<ul class="subnav" id="sub2" style="z-index:100;">
+						<li class="subli"><a href="#product">APPLE</a></li>
+						<li class="subli"><a href="#product">HUAWEI</a></li>
+					</ul>
+				</li>
+				<li class="li1" id="nav4">
+					<a href="#about" id="about">ABOUT<b class="caret"></b></a>
+					<ul class="subnav" id="sub3" style="z-index:100;">
+						<li class="subli"><a href="#product">APPLE</a></li>
+						<li class="subli"><a href="#product">HUAWEI</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="clear"></div>
+		</nav>
+		
+		<!----------------long pic----------------->
+		<div class="long box" style="z-index: -100;">
+			<div class="left" style="z-index:-1;"></div>
+			<div class="right" style="z-index:-1;"><img src="../img/right.png"></div>
+			<p class="hello" id="hello">HELLO</p>
+			<p class="hello">WORLD</p>
+			<p class="product">PRODUCT</p>
+		</div>
+		
+		<div class="center">
+			<!-----------three columns-------------->
+			<div class="three-column box">
+				<div class="column1">
+					<span class="no">One</span>
+						<img class="pic" src="../img/one.png"> 
+					<span class="grey">Level2 Title</span>
+					
+					<p class="para">Some text Some text Some textSome text Some text Some textSome text</p>
+				</div>
+				<div class="column1">
+					<span class="no">Two</span>
+					<img class="pic" src="../img/two.png">
+					<span class="grey">Level2 Title</span>
+					 
+					<p class="para">Some text Some text Some textSome text Some text Some textSome text</p>
+				</div>
+				<div class="column1">
+					<span class="no">Three</span>
+					<img class="pic" src="../img/three.png"> 
+					<span class="grey">Level2 Title</span>
+					
+					<p class="para">Some text Some text Some textSome text Some text Some textSome text</p>
+				</div>
+			</div>
+			
+			<!-------------slider------------------->
+			<div id="banner">
+				<div class="slides" id="slides">
+					<ul class="slide-pic" id="slide-pic">
+						<li index="0"class="cur libar" >
+							<img id="slide1" class="pic1" alt="" src="../img/someText.png">
+						</li>
+						<li  index="1" class="libar">
+							<img id="slide2" class="pic1" alt="" src="../img/right.png">
+						</li>
+						<li  index="2" class="libar">
+							<img id="slide3" class="pic1" alt="" src="../img/handshake.png">
+						</li>
+						<li index="0"class="cur libar" >
+							<img id="slide1" class="pic1" alt="" src="../img/someText.png">
+						</li>
+					</ul>
+				</div>
+		    </div>
+			<!----------------tab------------------>
+			<div class="box tab-bar">
+				<div class="tab" id="tab11">TABONE</div>
+				<div class="tab active" id="tab12">TABTWO</div>
+				<div class="tab" id="tab13">TABTHR</div>
+				<div class="tab" id="tab14">TABFOR</div>
+			</div>
+			<div id="tab1" class="panel">Hello world1</div>
+			<div id="tab2" class="panel">
+				<!-------------table--------------------->
+				<table>
+					<caption>Table Caption</caption>
+					<thead>
+						<tr>
+					        <th class="col1"></th>
+					        <th>Free Version</th>
+					        <th class="col1">Personal Versions</th>
+					        <th>Company Version</th>
+					    </tr>
+					</thead>
+					<tbody>
+					    <tr>
+					        <td class="col1">Feature &nbsp; A</td>
+					        <td>Some &nbsp; text &nbsp; Some &nbsp; text &nbsp; Some &nbsp; text</td>
+					        <td class="col1">Some &nbsp; text &nbsp; Some &nbsp; text &nbsp; Some &nbsp; text</td>
+					        <td>Some &nbsp; text &nbsp; Some &nbsp; text &nbsp; Some &nbsp; text</td>
+					    </tr>
+					    <tr>
+					        <td class="col1">Feature &nbsp; B</td>
+					        <td>Some &nbsp; text &nbsp; Some &nbsp; text &nbsp; Some &nbsp; text</td>
+					        <td class="col1">Some &nbsp; text &nbsp; Some &nbsp; text &nbsp; Some &nbsp; text</td>
+					        <td>Some &nbsp; text &nbsp; Some &nbsp; text &nbsp; Some &nbsp; text</td>
+					    </tr>
+					    <tr>
+					        <td class="col1">Feature &nbsp; C</td>
+					        <td>Some &nbsp; text &nbsp; Some &nbsp; text &nbsp; Some &nbsp; text</td>
+					        <td class="col1">Some &nbsp; text &nbsp; Some &nbsp; text &nbsp; Some &nbsp; text</td>
+					        <td>Some &nbsp; text &nbsp; Some &nbsp; text &nbsp; Some &nbsp; text</td>
+					    </tr>
+					    <tr>
+					        <td class="col1">Feature &nbsp; D</td>
+					        <td>Some &nbsp; text &nbsp; Some &nbsp; text &nbsp; Some &nbsp; text</td>
+					        <td class="col1">Some &nbsp; text &nbsp; Some &nbsp; text &nbsp; Some &nbsp; text</td>
+					        <td>Some &nbsp; text &nbsp; Some &nbsp; text &nbsp; Some &nbsp; text</td>
+					    </tr>
+					    <tr>
+					        <td class="col1">Price</td>
+					        <td class="price" style="color:green;font-weight:bold;">Free</td>
+					        <td class="col1" style="color:blue;font-weight:bold;">$9.99/<sup>mo</sup></td>
+					        <td class="price" style="color:red;font-weight:bold;">$99.99/<sup>mo</sup></td>
+					    </tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="tab3" class="panel">Hello world2</div>
+			<div id="tab4" class="panel">Hello world3</div>
+			<!---------------handshake---------------->
+			<div class="bottom box">
+				<!--<img src="../img/left2.png" class="left2"/>
+				<img src="../img/handshake.png" class="handshake"/>-->
+				<div class="input-group">
+					<select class="input" id="country">
+						<option>Select your country</option>
+						<option>China</option>
+						<option>America</option>
+						<option>Japan</option>
+						<option>UK</option>
+					</select><br/>
+					<select class="input" id="city">
+						<option>Select your city</option>
+					</select><br />
+					<input type="text" class="input" placeholder="Input your email address"/>
+					<button class="btn">Submit</button>
+				</div>
+				<img src="../img/handshake.png" class="handshake"> 
+			</div>
+		</div>
+		<footer>&copy;2017 IFE</footer>
+	</body>
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../js/index.js"></script>
+	<script type="text/javascript" src="../js/nav.js"></script>
+</html>
