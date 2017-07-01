@@ -8,6 +8,10 @@ window.onload=function(){
 	var height;
 	height = (client - nav - longHeight-20);
 	document.getElementById("left-column").style.height=height+"px";
+	document.getElementById("left-column").onscroll = function(){
+		height = (client - nav - longHeight-20);
+		document.getElementById("left-column").style.height=height+"px";
+	}
 	window.onscroll = function(){
 		if(document.body.scrollTop){
 			scroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -17,6 +21,19 @@ window.onload=function(){
 			}
 			document.getElementById("left-column").style.height=height+"px";
 			console.log(height);
+			
+			if(document.getElementById("table-head").offsetTop<=(scroll-nav-longHeight)){
+				document.getElementById("table-head").style.position = "fixed";
+				document.getElementById("table-head").style.top = 0+"px";
+				document.getElementById("table-head").style.width=document.getElementsByTagName("tbody")[0].offsetWidth+"px";
+				var th=document.getElementsByTagName("th");
+				for(var i=0; i<th.length;i++){
+					th[i].style.width=(document.getElementsByTagName("tbody")[0].offsetWidth/4)+"px";
+				}
+			}
+			else{
+				document.getElementById("table-head").style.position = "static";
+			}
 		}
 	}
 	console.log(scroll);
