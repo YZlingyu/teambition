@@ -1,17 +1,43 @@
 window.onload=function(){
+	
+	/*-----------动态生成左侧导航栏----------*/
+	var length = leftJSON.nav.length;
+	console.log(leftJSON.nav[0].level1);
+	console.log(leftJSON.nav[0].level2);
+	var txt="";
+	for(var i=0; i<length; i++){
+		var level1 = leftJSON.nav[i].level1;
+		var length2 = leftJSON.nav[i].level2.length;
+		var txt2 = "";
+		for(var j=0; j<length2; j++){
+			var level2 = leftJSON.nav[i].level2[j];
+			txt2 += '<li class="level2">'+level2+'</li>';
+		}
+		txt += '<li class="level1" id="level1" id="nav'+[i]+'">'+level1+'<ul class="sub-nav2" id="sub-nav'+[i]+'">'
+				+txt2+'</ul></li>';
+		
+		document.getElementById("column2").innerHTML = txt;
+	}
+		
+	/*----------------左导航滑动-----------------------*/	
 	var client = window.screen.height;
 	var scroll;
 	var nav = document.getElementById("nav").offsetHeight;
 	var longHeight = document.getElementById("long").offsetHeight;
 	var wholeHeight = document.body.clientHeight; 
-	//var leftNav = document.getElementById("left-column");
 	var height;
 	height = (client - nav - longHeight-20);
 	document.getElementById("left-column").style.height=height+"px";
+	
+	
+	
 	document.getElementById("left-column").onscroll = function(){
 		height = (client - nav - longHeight-20);
 		document.getElementById("left-column").style.height=height+"px";
+		document.getElementById("left-column").scrollHeight=500+"px";
 	}
+	
+	
 	window.onscroll = function(){
 		if(document.body.scrollTop){
 			scroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -20,7 +46,7 @@ window.onload=function(){
 				height = (wholeHeight - nav - longHeight)
 			}
 			document.getElementById("left-column").style.height=height+"px";
-			console.log(height);
+		//	console.log(height);
 			
 			if(document.getElementById("table-head").offsetTop<=(scroll-nav-longHeight)){
 				document.getElementById("table-head").style.position = "fixed";
@@ -36,10 +62,23 @@ window.onload=function(){
 			}
 		}
 	}
-	console.log(scroll);
-	console.log(nav);
-	console.log(longHeight);
 	
 	
-	console.log(height);
+	/*------------二级导航--------------*/
+	function toggle(obj){
+		var el = document.getElementById(obj);
+		el.style.display = (el.style.display != "none"?"none":"block");
+	}
+
+	function addListener(x){
+		x.onclick = function clickHandler(){
+			toggle(x.childNodes[1].id);
+			//console.log(x.childNodes[1].id);
+		}
+	}
+	
+	for(var a=0; a<leftJSON.nav.length; a++){
+		var levelArray = document.getElementsByClassName("level1");
+		addListener(levelArray[a]);
+	}
 }
