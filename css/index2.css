@@ -358,3 +358,45 @@ th{
 tbody tr:nth-child(odd){
 	background-color: #EEEEEE;
 }
+.sub-nav2{
+	background-color: #FFFFFF;
+	display: none;
+}
+.level2{
+	height:20px;
+	line-height: 20px;
+}
+/*-------弹出框------*/
+#mask{
+	width: 100%;
+	height: 500%;
+	background-color: #333333;
+	position: fixed;
+	opacity: 0.6;
+	top: 0;
+	left: 0;
+	display: none;
+}
+#model, #model2{
+	width: 250px;
+	height:150px;
+	padding :10px;
+	background-color: #FFFFFF;
+	position: absolute;
+	top: 200px;
+	left: 400px;
+	border: 1px solid #ccc;
+}
+.left-col{
+	line-height:30px;
+	width:30%;
+	float: left;
+}
+#name, #content, #value{
+	height: 20px;
+	margin: 5px 0;
+}
+.btn-group{
+	width:100px;
+	margin:10px auto;
+}
