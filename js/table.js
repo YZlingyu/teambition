@@ -1,23 +1,25 @@
-var length4;
-//console.log(length);
-var txt3 = "";
-function table(){
-	length4 = rightJSON.table.length;
-	for(var b=0; b<length4; b++){
-		txt3 += '<tr><td>'+rightJSON.table[b].name+'</td><td>'+rightJSON.table[b].content+'</td><td>'+rightJSON.table[b].value+'</td>'
-			 +'<td><button class="tiny-btn" id="edit'+b+'">编辑</button><button class="tiny-btn" id="delete'+b+'">删除</button></td></tr>';
-	}
-	console.log(txt3);
-	document.getElementById("table-body").innerHTML = txt3;
-}
-table();
-
-/*--------按钮函数------*/
 var model = document.getElementById("model");
 var yes = document.getElementById("yes");
 var cancel = document.getElementById("cancel");
 var yes2 = document.getElementById("yes2");
 var cancel2 = document.getElementById("cancel2");
+function table(){
+	var length4;
+	//console.log(length);
+	var txt3 = "";
+	length4 = rightJSON.table.length;
+	for(var b=0; b<length4; b++){
+		txt3 += '<tr><td>'+rightJSON.table[b].name+'</td><td>'+rightJSON.table[b].content+'</td><td>'+rightJSON.table[b].value+'</td>'
+			 +'<td><button class="tiny-btn" id="edit'+b+'">编辑</button><button class="tiny-btn" id="delete'+b+'">删除</button></td></tr>';
+	}
+	//console.log(txt3);
+	document.getElementById("table-body").innerHTML = txt3;
+	addListener();
+}
+table();
+
+/*--------按钮函数------*/
+
 function addEventListener1(y){
 	y.onclick = function editRow(y){
 		mask.style.display = "block";
@@ -45,11 +47,11 @@ function addEventListener1(y){
 		/*rightJSON.table[id-1].name=name;
 		rightJSON.table[id-1].content=content;
 		rightJSON.table[id-1].value=value;*/
-		console.log(table_now);
-		console.log(table_ago);
+		//console.log(table_now);
+		//console.log(table_ago);
 		//console.log(rightJSON.table[id-1].name);
 		rightJSON.table.splice(id-1,1,table_now);
-		console.log(JSON.stringify(rightJSON.table));
+		//console.log(JSON.stringify(rightJSON.table));
 		table();
 		model.style.display = "none";
 		mask.style.display = "none";
@@ -73,7 +75,7 @@ function addEventListener2(z){
 		//var node2 = z.parentNode.parentNode;
 		var body = document.getElementsByTagName("tbody")[0];
 		body.removeChild(body.childNodes[id2]);
-		console.log(body.childNodes[id2]);
+		//console.log(body.childNodes[id2]);
 		//delete rightJSON.table[id2];
 		var table_ago={
 			"id":id2-1,
@@ -94,9 +96,13 @@ function addEventListener2(z){
 	};
 	return rightJSON;
 }
-for(var b=0; b<length4; b++){
-	var deleteNode = document.getElementById("delete"+b);
-	var editNode = document.getElementById("edit"+b);
-	addEventListener1(editNode);
-	addEventListener2(deleteNode);
+
+function addListener(){
+	for(var b=0; b<rightJSON.table.length; b++){
+		var deleteNode = document.getElementById("delete"+b);
+		var editNode = document.getElementById("edit"+b);
+		addEventListener1(editNode);
+		addEventListener2(deleteNode);
+	}
 }
+
