@@ -1,11 +1,16 @@
-var length4 = rightJSON.table.length;
+var length4;
 //console.log(length);
 var txt3 = "";
-for(var b=0; b<length4; b++){
-	txt3 += '<tr><td>'+rightJSON.table[b].name+'</td><td>'+rightJSON.table[b].content+'</td><td>'+rightJSON.table[b].value+'</td>'
-		 +'<td><button class="tiny-btn" id="edit'+b+'">编辑</button><button class="tiny-btn" id="delete'+b+'">删除</button></td></tr>';
+function table(){
+	length4 = rightJSON.table.length;
+	for(var b=0; b<length4; b++){
+		txt3 += '<tr><td>'+rightJSON.table[b].name+'</td><td>'+rightJSON.table[b].content+'</td><td>'+rightJSON.table[b].value+'</td>'
+			 +'<td><button class="tiny-btn" id="edit'+b+'">编辑</button><button class="tiny-btn" id="delete'+b+'">删除</button></td></tr>';
+	}
+	console.log(txt3);
+	document.getElementById("table-body").innerHTML = txt3;
 }
-document.getElementById("table-body").innerHTML = txt3;
+table();
 
 /*--------按钮函数------*/
 var model = document.getElementById("model");
@@ -19,7 +24,7 @@ function addEventListener1(y){
 		model.style.display = "block";
 	};
 	yes.onclick = function(){
-		alert("yes");
+		//alert("yes");
 		var name = document.getElementById("name").value;
 		var content = document.getElementById("content").value;
 		var value = document.getElementById("value").value;
@@ -45,10 +50,9 @@ function addEventListener1(y){
 		//console.log(rightJSON.table[id-1].name);
 		rightJSON.table.splice(id-1,1,table_now);
 		console.log(JSON.stringify(rightJSON.table));
-		
+		table();
 		model.style.display = "none";
 		mask.style.display = "none";
-		location.reload();
 	};
 	cancel.onclick = function(){
 		model.style.display = "none";
@@ -65,17 +69,24 @@ function addEventListener2(z){
 	yes2.onclick = function(){
 		var id2 = z.id.charAt(6);
 		//z.parentNode.parentNode.style.display = "none";
-		delete rightJSON.table[id2];
+		document.getElementById("left-column").display="none";
+		//var node2 = z.parentNode.parentNode;
+		var body = document.getElementsByTagName("tbody")[0];
+		body.removeChild(body.childNodes[id2]);
+		console.log(body.childNodes[id2]);
+		//delete rightJSON.table[id2];
 		var table_ago={
 			"id":id2-1,
 			"name":rightJSON.table[id2-1].name,
 			"content":rightJSON.table[id2-1].content,
 			"value":rightJSON.table[id2-1].value
 		}
+		//alert(1);
 		rightJSON.table.splice(id2-1,1);
+		table();
 		model2.style.display = "none";
 		mask.style.display = "none";
-		location.reload();
+		//location.reload();
 	};
 	cancel2.onclick = function(){
 		model2.style.display = "none";
